@@ -12,10 +12,10 @@ class TwitterData(object):
     """
     def __init__(self):
         # accessするための準備
-        self.consumer_key = "VB4kQpLcGtr6bN7VRd8kwiJyz"
-        self.consumer_secret = "KzU55Twu8HcgBcqlMWKvKDyVZALvthNIcPYBmDUbsU8AMjMV2n"
-        self.access_token = "2927457264-43xm7UX2Z8iIg2mCVAHnarSIQvVFmKABZKOLEq0"
-        self.access_secret = "YyuWZAPp0qAliJ2PT0slga36b8Ns6kEP8DbxXMAKHLtTx"
+        self.consumer_key = ""
+        self.consumer_secret = ""
+        self.access_token = ""
+        self.access_secret = ""
 
         self.auth = ty.OAuthHandler(self.consumer_key, self.consumer_secret)
         self.auth.set_access_token(self.access_token, self.access_secret)
@@ -117,7 +117,4 @@ class SqliteProcess(object):
 
 if __name__ == "__main__":
     twitter = TwitterData()
-
-    while True:
-        twitter.tl_tweets(100)
-        time.sleep(10)
+    twitter.tl_tweets(100)
