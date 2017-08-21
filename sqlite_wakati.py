@@ -44,7 +44,7 @@ class WakatiTxt(object):
         self.null_data = self.db_export.export_nuldb()
         self.is_data = self.db_export.export_isdb()
 
-    def wakati_return(self):
+    def wakati_return(self, name):
         # 分かち書き形式にするためにインデントをjoinする
         is_wakati = " ".join(self.wakati_process(self.is_data))
         null_wakati = " ".join(self.wakati_process(self.null_data))
@@ -53,14 +53,13 @@ class WakatiTxt(object):
         以下はtxt形式で分かち書きをexportしたい人用
         引数にnameか何か用意して下の処理を分岐させる
 
-
         if name == "is_txt":
             open("is.txt", "w").write(is_wakati)
-        elif name = "null_txt":
+        elif name == "null_txt":
             open("null.txt", "w").write(null_wakati)
         """
 
-        return is_wakati, null_wakati
+        # return is_wakati, null_wakati
 
     def wakati_process(self, data_list):
         tweet_list = []
